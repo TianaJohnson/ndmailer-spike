@@ -10,6 +10,11 @@ class App extends Component {
       email:'',
       notes:'',
     }
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange = e => {
+    this.setState({[e.target.name]:e.target.value})
   }
 
 render(){
@@ -23,20 +28,23 @@ return (
         <Input type="Name" 
                name="email" 
                id="exampleName" 
-               placeholder="Full Name" />
+               placeholder="Full Name"
+               onChange={this.handleChange} />
       </FormGroup>
     <FormGroup>
         <Label>Email: </Label>
         <Input type="email" 
                name="email" 
                id="exampleEmail" 
-               placeholder="Email Address" />
+               placeholder="Email Address"
+               onChange={this.handleChange}  />
       </FormGroup>
       <br/>
       <FormGroup>
         <Input type="textarea"
                name="text"
                id="exampleText"
+               onChange={this.handleChange} 
                style={{ height: 200, width: 300 }} />  
       </FormGroup>
     </Form>
