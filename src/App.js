@@ -17,12 +17,19 @@ class App extends Component {
     this.setState({[e.target.name]:e.target.value})
   }
 
+  handleSubmit(e) {
+    e.preventDefault()
+
+    const { name, email, notes } = this.state
+  }
+
 render(){
 return (
   <div className="App">
     <header className="App-header">
+      <br/>
     <h1>I am attempting to spike nodemailer.</h1>
-    <Form>
+    <Form onSubmit={this.handleSubmit}>
     <FormGroup>
         <Label>Name: </Label>
         <Input type="Name" 
@@ -50,6 +57,7 @@ return (
     </Form>
     <br/>
     <Button>Yeah!</Button>
+    <br/>
     </header>
    
   </div>
