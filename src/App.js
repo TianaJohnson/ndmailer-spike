@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import './App.css';
+import axios from'axios';
 
 class App extends Component {
   constructor(props) {
@@ -11,16 +12,23 @@ class App extends Component {
       notes:'',
     }
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange = e => {
     this.setState({[e.target.name]:e.target.value})
   }
 
-  handleSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault()
 
     const { name, email, notes } = this.state
+
+    const form = await axios.post('/api/form', {
+      name,
+      email,
+      note
+    })
   }
 
 render(){
