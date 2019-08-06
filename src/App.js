@@ -26,7 +26,7 @@ return (
     <FormGroup>
         <Label>Name: </Label>
         <Input type="Name" 
-               name="email" 
+               name="name" 
                id="exampleName" 
                placeholder="Full Name"
                onChange={this.handleChange} />
@@ -42,7 +42,7 @@ return (
       <br/>
       <FormGroup>
         <Input type="textarea"
-               name="text"
+               name="notes"
                id="exampleText"
                onChange={this.handleChange} 
                style={{ height: 200, width: 300 }} />  
@@ -51,13 +51,7 @@ return (
     <br/>
     <Button>Yeah!</Button>
     </header>
-    <Form>
-      <Input>
-      </Input>
-
-    </Form>
-    <br/>
-    <Button>Yeah!</Button>
+   
   </div>
 
 );
