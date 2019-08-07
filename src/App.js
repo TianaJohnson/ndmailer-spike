@@ -21,10 +21,9 @@ class App extends Component {
 
   async handleSubmit(e) {
     e.preventDefault()
-
     const { name, email, notes } = this.state
-
-    const Form = await axios.post('/api/form', {
+    
+    const form = await axios.post('/api/form', {
       name,
       email,
       notes,
@@ -37,13 +36,14 @@ return (
     <header className="App-header">
       <br/>
     <h1>I am attempting to spike nodemailer.</h1>
-    <Form>
+    <Form className="formMain">
     <FormGroup>
         <Label>Name: </Label>
         <Input type="Name" 
                name="name" 
                id="exampleName" 
                placeholder="Full Name"
+               value = {this.state.name}
                onChange={this.handleChange} />
       </FormGroup>
     <FormGroup>
@@ -52,6 +52,7 @@ return (
                name="email" 
                id="exampleEmail" 
                placeholder="Email Address"
+               value = {this.state.email}
                onChange={this.handleChange}  />
       </FormGroup>
       <br/>
@@ -59,6 +60,7 @@ return (
         <Input type="textarea"
                name="notes"
                id="exampleText"
+               value = {this.state.notes}
                onChange={this.handleChange} 
                style={{ height: 200, width: 300 }} />  
       </FormGroup>
