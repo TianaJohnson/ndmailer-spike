@@ -24,7 +24,7 @@ class App extends Component {
 
     const { name, email, notes } = this.state
 
-    const form = await axios.post('/api/form', {
+    const Form = await axios.post('/api/form', {
       name,
       email,
       notes,
@@ -37,7 +37,7 @@ return (
     <header className="App-header">
       <br/>
     <h1>I am attempting to spike nodemailer.</h1>
-    <Form onSubmit={this.handleSubmit}>
+    <Form>
     <FormGroup>
         <Label>Name: </Label>
         <Input type="Name" 
@@ -64,7 +64,9 @@ return (
       </FormGroup>
     </Form>
     <br/>
-    <Button>Yeah!</Button>
+    <Button
+    onClick = {this.handleSubmit}
+    >Yeah!</Button>
     <br/>
     </header>
    
