@@ -20,7 +20,11 @@ app.post('/api/form', (req, res) => {
         <li>Name: ${req.body.name}</li>
         <li>Email: ${req.body.email}</li>
     </ul>
+    <h3> Message, </h3>
+    <p>${req.body.notes}</p>
     `
+
+    let transporter = nodemailer.createTransport({ })
 })
     
 })
