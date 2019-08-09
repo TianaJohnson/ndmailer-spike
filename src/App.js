@@ -30,6 +30,7 @@ class App extends Component {
     })
   }
 
+  // just to add something, more to come. im gunna get it.
 render(){
 return (
   <div className="App">
