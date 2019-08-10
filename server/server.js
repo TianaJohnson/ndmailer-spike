@@ -24,9 +24,32 @@ app.post('/api/form', (req, res) => {
     <p>${req.body.notes}</p>
     `
 
-    let transporter = nodemailer.createTransport({ })
-})
-    
+    let transporter = nodemailer.createTransport({
+        host: "smtp.ethereal.email",
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+          user: 'alene.collier@ethereal.email',
+          pass: 'QDuvwkp553B1e7yzfh'
+        }
+      });
+
+    let mailOptions = {
+        from: 'test@testaccount.com',
+        to: 'alene.collier@ethereal.email',
+        replyTo: 'test@testaccount.com',
+        subject: 'new messasge',
+        text: req.body.notes,
+        html: htmlEmail
+    }
+    transporter.sendMail(mailOptions, (err, info) => {
+        if (err) {
+            return console.log(err)
+        }
+        console.log('message sent!: %s', info.massage)
+        console.log('Message URL: %s', nodemailer.getTestMessageUrl(info))
+    })
+})    
 })
 
 // Start up our server
