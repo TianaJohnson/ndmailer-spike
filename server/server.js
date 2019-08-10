@@ -47,7 +47,7 @@ app.post('/api/form', (req, res) => {
             return console.log(err)
         }
         console.log('message sent!: %s', info.massage)
-        console.log('Message URL: %s', nodemailer.getTestMessageUrl(info))
+        console.log('Message URL: %s', nodemailer.getTestMessageUrl(info  ))
     })
 })    
 })
