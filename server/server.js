@@ -29,14 +29,14 @@ app.post('/api/form', (req, res) => {
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-          user: 'alene.collier@ethereal.email',
-          pass: 'QDuvwkp553B1e7yzfh'
+          user: 'kadin.dare@ethereal.email',
+          pass: '8vUhA2V43kTUDWswMk'
         }
       });
 
     let mailOptions = {
         from: 'test@testaccount.com',
-        to: 'alene.collier@ethereal.email',
+        to: 'kadin.dare@ethereal.email',
         replyTo: 'test@testaccount.com',
         subject: 'new messasge',
         text: req.body.notes,
@@ -56,3 +56,5 @@ app.post('/api/form', (req, res) => {
 app.listen(PORT, function(){
   console.log(`listening on port ${PORT}`);
 });
+
+
